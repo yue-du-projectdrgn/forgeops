@@ -1,0 +1,26 @@
+image:
+  repository: gcr.io/forgerock-io/ds
+  #repository: gcr.io/engineering-devops/ds
+  tag: 6.5.1
+  pullPolicy: Always
+
+gcs:
+  enabled: false
+  bucket: gs://forgeops/dj-backup/s-cluster
+
+s3:
+  enabled: false
+  bucket: s3://forgeops/dj-backup/s-cluster  
+
+nfs:
+  server: 10.201.33.74
+  #server: fs-a8b101e9.efs.ap-southeast-1.amazonaws.com 
+  path: /export
+
+#backup:
+#  pvcName: ds-backup-v2
+#  storageSize: 50Gi
+
+createPVC: false
+
+slackUrl: undefined
