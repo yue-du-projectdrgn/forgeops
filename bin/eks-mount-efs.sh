@@ -11,6 +11,7 @@ set -o pipefail
 set -o nounset
 
 source "${BASH_SOURCE%/*}/../etc/eks-env.cfg"
+echo "coming here"
 
 # Get worker node security group id
 SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*${EKS_WORKER_NODE_STACK_NAME}-NodeSecurityGroup* --query "SecurityGroups[*].{ID:GroupId}"  | grep ID | awk '{ print $2 }' | cut -d \" -f2)

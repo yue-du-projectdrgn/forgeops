@@ -13,14 +13,14 @@ s3:
   bucket: s3://forgeops/dj-backup/s-cluster  
 
 nfs:
-  #server: 10.201.33.74
-  server: fs-8bb301ca.efs.ap-southeast-1.amazonaws.com 
+  server: 10.201.33.74
+  #server: fs-54d96b15.efs.ap-southeast-1.amazonaws.com 
   path: /export
 
-backup:
+#backup:
   pvcName: ds-backup
   storageSize: 50Gi
 
-createPVC: true
+createPVC: false
 
 slackUrl: undefined

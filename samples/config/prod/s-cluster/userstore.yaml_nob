@@ -42,12 +42,12 @@ podAntiAffinity: hard
 # if you want to disable backup, comment out this whole section.  Setting enabled to "false"
 # will not work
 
-backup:
-  enabled: true
-  storageClass: fast
-  storageSize: 50Gi
-  pvcClaimName: ds-backup
+#backup:
+#  enabled: true
+#  storageClass: fast
+#  storageSize: 50Gi
+#  pvcClaimName: ds-backup
   
 # If existing database is found then restore is always skipped
-restore:
-  enabled: true
+#restore:
+#  enabled: true
