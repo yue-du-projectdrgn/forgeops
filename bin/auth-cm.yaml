@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::840852872102:role/dragamcluster1-NodeInstanceRole-JNPF6ELNA0F6 
+      username: system:node: ip-192-168-184-169.ap-southeast-1.compute.internal 
+      groups:
+        - system:bootstrappers
+        - system:nodes

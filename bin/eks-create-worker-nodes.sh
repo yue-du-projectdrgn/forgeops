@@ -13,7 +13,7 @@ set -o nounset
 source "${BASH_SOURCE%/*}/../etc/eks-env.cfg"
 
 # Executing cloudformation script to create worker nodes
-aws cloudformation deploy \
+#aws cloudformation deploy \
           --stack-name $EKS_WORKER_NODE_STACK_NAME \
           --template-file ../etc/amazon-eks-nodegroup.yaml \
           --parameter-overrides KeyName=${EC2_KEYPAIR_NAME} \

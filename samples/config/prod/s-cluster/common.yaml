@@ -3,10 +3,10 @@
 # for your DNS domain 
 
 #domain: .freng.org
-domain: .scbretail.com
+domain: .dragampoc.com
 
 #fqdn: login.small.freng.org
-fqdn: login.nonprod.scbretail.com
+fqdn: login.nonprod.dragampoc.com
 
 # Install passwords.
 amadminPassword: password

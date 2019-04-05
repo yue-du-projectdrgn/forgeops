@@ -22,7 +22,7 @@ define numusers=$USERS
 
 branch: [suffix]
 objectClass: top
-objectClass: organization
+objectClass: organizationalUnit
 
 branch: ou=People,[suffix]
 objectClass: top

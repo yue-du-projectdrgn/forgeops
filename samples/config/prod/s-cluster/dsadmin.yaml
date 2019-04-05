@@ -14,7 +14,7 @@ s3:
 
 nfs:
   #server: 10.201.33.74
-  server: fs-8bb301ca.efs.ap-southeast-1.amazonaws.com 
+  server: fs-52912313.efs.ap-southeast-1.amazonaws.com 
   path: /export
 
 backup:

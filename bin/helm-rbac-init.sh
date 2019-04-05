@@ -6,8 +6,11 @@
 # You must have the gcloud command installed and access to a GCP project.
 # See https://cloud.google.com/container-engine/docs/quickstart
 
+#kubectl -n kube-system delete deployment tiller-deploy
 kubectl -n kube-system delete deployment tiller-deploy
+kubectl delete clusterrolebinding tiller
+kubectl -n kube-system delete serviceaccount tiller
 
-kubectl -n kube-system create sa tiller
+kubectl -n kube-system create serviceaccount tiller
 kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
-helm init --upgrade --wait --service-account tiller
+helm init --service-account=tiller
