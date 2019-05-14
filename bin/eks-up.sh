@@ -48,11 +48,11 @@ source "${BASH_SOURCE%/*}/../etc/eks-env.cfg"
 #./eks-create-worker-nodes.sh
 
 # Wait for worker nodes to be ready
-#echo -e "Waiting for worker nodes to be ready...\n"
+echo -e "Waiting for worker nodes to be ready...\n"
 sleep 5s
 
 # Mount EFS
- ./eks-mount-efs.sh
+#./eks-mount-efs.sh
 
 # Create monitoring namespace
 #kubectl create namespace ${EKS_MONITORING_NS}

@@ -14,23 +14,23 @@ source "${BASH_SOURCE%/*}/../etc/eks-env.cfg"
 
 # Executing cloudformation script to create worker nodes
 #aws cloudformation deploy \
-          --stack-name $EKS_WORKER_NODE_STACK_NAME \
-          --template-file ../etc/amazon-eks-nodegroup.yaml \
-          --parameter-overrides KeyName=${EC2_KEYPAIR_NAME} \
-                                NodeImageId=${EKS_AMI_ID} \
-                                NodeInstanceType=${EKS_WORKER_NODE_INSTANCE_TYPE} \
-                                NodeAutoScalingGroupMinSize=${EKS_MIN_NODES} \
-                                NodeAutoScalingGroupMaxSize=${EKS_MAX_NODES} \
-                                NodeVolumeSize=${EKS_WORKER_NODE_SIZE_IN_GB} \
-                                ClusterName=${EKS_CLUSTER_NAME} \
-                                NodeGroupName=${EKS_WORKER_NODE_GROUP} \
-                                ClusterControlPlaneSecurityGroup=${EKS_CONTROL_PLANE_SECURITY_GROUP} \
-                                VpcId=${EKS_VPC_ID} \
-                                Subnets=${EKS_SUBNETS} \
-                                S3PolicyArn=${S3_POLICY_ARN} \
-                                EFSSecurityGroup=${EFS_SECURITY_GROUP_ID} \
-                                --capabilities CAPABILITY_IAM
-
+#          --stack-name $EKS_WORKER_NODE_STACK_NAME \
+#          --template-file ../etc/amazon-eks-nodegroup.yaml \
+#          --parameter-overrides KeyName=${EC2_KEYPAIR_NAME} \
+#                                NodeImageId=${EKS_AMI_ID} \
+#                                NodeInstanceType=${EKS_WORKER_NODE_INSTANCE_TYPE} \
+#                                NodeAutoScalingGroupMinSize=${EKS_MIN_NODES} \
+#                                NodeAutoScalingGroupMaxSize=${EKS_MAX_NODES} \
+#                                NodeVolumeSize=${EKS_WORKER_NODE_SIZE_IN_GB} \
+#                                ClusterName=${EKS_CLUSTER_NAME} \
+#                                NodeGroupName=${EKS_WORKER_NODE_GROUP} \
+#                                ClusterControlPlaneSecurityGroup=${EKS_CONTROL_PLANE_SECURITY_GROUP} \
+#                                VpcId=${EKS_VPC_ID} \
+#                                Subnets=${EKS_SUBNETS} \
+#                                S3PolicyArn=${S3_POLICY_ARN} \
+#                                EFSSecurityGroup=${EFS_SECURITY_GROUP_ID} \
+#                                --capabilities CAPABILITY_IAM
+#
 
 echo "Worker nodes provisioned. Sleeping for 15 seconds..."
 
@@ -53,4 +53,3 @@ data:
         - system:bootstrappers
         - system:nodes
 EOF
-

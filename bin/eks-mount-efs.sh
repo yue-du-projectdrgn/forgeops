@@ -14,7 +14,7 @@ source "${BASH_SOURCE%/*}/../etc/eks-env.cfg"
 echo "coming here"
 
 # Get worker node security group id
-SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*${EKS_WORKER_NODE_STACK_NAME}-NodeSecurityGroup* --query "SecurityGroups[*].{ID:GroupId}"  | grep ID | awk '{ print $2 }' | cut -d \" -f2)
+SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*${EKS_WORKER_NODE_STACK_NAME}-NodeSecurityGroup* --query "SecurityGroups[*].{ID:GroupId}"  | grep ID | awk '{ print $3 }' | cut -d \" -f2)
 
 # Create array of mount target IDs 
 MOUNT_TARGETS=$(aws efs describe-mount-targets --file-system-id ${EFS_ID} | grep MountTargetId | awk '{ print $2 }' | cut -d \" -f2)
@@ -27,7 +27,7 @@ do
 done
 
 ## Add inbound SSH access to worker nodes
-aws ec2 authorize-security-group-ingress --group-id $SG  --protocol tcp --port 22 --cidr 0.0.0.0/0 || true
+#aws ec2 authorize-security-group-ingress --group-id $SG  --protocol tcp --port 22 --cidr 0.0.0.0/0 || true
 
 # Get array of worker node external ips
 EXTERNAL_IPS=$(kubectl get nodes -o jsonpath={.items[*].status.addresses[?\(@.type==\"ExternalIP\"\)].address})
