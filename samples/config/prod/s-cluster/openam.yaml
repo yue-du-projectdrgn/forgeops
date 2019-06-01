@@ -23,3 +23,10 @@ catalinaOpts: >
   -verbose:gc -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+PrintGCDetails
   -XX:+PrintPromotionFailure -XX:+PrintAdaptiveSizePolicy -XX:+PrintTenuringDistribution 
   -Xloggc:/tmp/gc.log
+
+config:
+  name: frconfig
+  #path: /git/config/6.5/m-cluster/idm/ds-repo-explicit
+  path: /git/config/6.5/default/am
+  amCustomizationScriptPath: /git/config/6.5/default/am/customize-am.sh
+  strategy: git

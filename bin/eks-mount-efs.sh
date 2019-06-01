@@ -26,7 +26,7 @@ do
 done
 
 ## Add inbound SSH access to worker nodes
-aws ec2 authorize-security-group-ingress --group-id $SG  --protocol tcp --port 22 --cidr 0.0.0.0/0 || true
+#aws ec2 authorize-security-group-ingress --group-id $SG  --protocol tcp --port 22 --cidr 0.0.0.0/0 || true
 
 # Get array of worker node external ips
 EXTERNAL_IPS=$(kubectl get nodes -o jsonpath={.items[*].status.addresses[?\(@.type==\"ExternalIP\"\)].address})

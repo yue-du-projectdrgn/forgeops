@@ -38,28 +38,28 @@ ask
 source "${BASH_SOURCE%/*}/../etc/eks-env.cfg"
 
 # Now create the cluster
-./eks-create-cluster.sh
+#./eks-create-cluster.sh
 
 if [ $? -ne 0 ]; then
     exit 1
 fi
 
 # Create worker nodes
-./eks-create-worker-nodes.sh
+#./eks-create-worker-nodes.sh
 
 # Wait for worker nodes to be ready
 echo -e "Waiting for worker nodes to be ready...\n"
 sleep 5s
 
 # Mount EFS
-./eks-mount-efs.sh
+#./eks-mount-efs.sh
 
 # Create monitoring namespace
-kubectl create namespace ${EKS_MONITORING_NS}
+#kubectl create namespace ${EKS_MONITORING_NS}
 
 # Create the namespace parsed from cfg file and set the context
-kubectl create namespace ${EKS_CLUSTER_NS}
-kubectl config set-context $(kubectl config current-context) --namespace=${EKS_CLUSTER_NS}
+#kubectl create namespace ${EKS_CLUSTER_NS}
+#kubectl config set-context $(kubectl config current-context) --namespace=${EKS_CLUSTER_NS}
 
 # Create helm rbac
 ./helm-rbac-init.sh

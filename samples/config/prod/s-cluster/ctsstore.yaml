@@ -11,16 +11,16 @@ userstore:
 
 resources:
   limits:
-    memory: 5Gi
-  requests:
     memory: 3Gi
+  requests:
+    memory: 1Gi
 
-storageSize: 100Gi
+storageSize: 20Gi
 storageClass: fast
 
 # For JDK 8
 opendjJavaArgs: >
-  -server -Xms3g -Xmx3g -XX:+UseCompressedOops -XX:+UseG1GC -XX:+UseNUMA 
+  -server -Xms1g -Xmx1g -XX:+UseCompressedOops -XX:+UseG1GC -XX:+UseNUMA 
   -XX:MaxGCPauseMillis=100 -verbose:gc -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps 
   -XX:+PrintGCDetails -XX:+PrintPromotionFailure -XX:+PrintAdaptiveSizePolicy -Xloggc:/tmp/gc.log
 

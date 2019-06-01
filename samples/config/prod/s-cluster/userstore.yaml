@@ -30,7 +30,7 @@ opendjJavaArgs: >
 #  -XX:MaxGCPauseMillis=100 -verbose:gc -Xlog:gc:/tmp/gc.log
 
 
-storageSize: 100Gi
+storageSize: 20Gi
 storageClass: fast
 
 replicas: 2

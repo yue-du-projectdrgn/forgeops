@@ -20,6 +20,8 @@ echo "EFS Security Group created with ID: ${EFS_GROUP_ID}. Please set this value
 
 EFS_ID=$(aws efs create-file-system --performance-mode maxIO --creation-token EKSNFSMount --query 'FileSystemId' --output text)
 
+#EFS_ID="fs-52912313"
+
 while :
 do
     EFS_STATUS=$(aws efs describe-file-systems \
