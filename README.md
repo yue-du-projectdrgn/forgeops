@@ -2,33 +2,23 @@
 
 Docker and Kubernetes DevOps artifacts for the ForgeRock platform. 
 
-## Disclaimer 
+## Added by Habeeb - Specific customization for our cluster
 
-These samples are provided on an “as is” basis, without warranty of any kind, to the fullest extent
-permitted by law. ForgeRock does not warrant or guarantee the individual success developers
-may have in implementing the code on their development platforms or in
-production configurations. ForgeRock does not warrant, guarantee or make any representations
-regarding the use, results of use, accuracy, timeliness or completeness of any data or
-information relating to these samples. ForgeRock disclaims all warranties, expressed or implied, and
-in particular, disclaims all warranties of merchantability, and warranties related to the code, or any
-service or software related thereto. ForgeRock shall not be liable for any direct, indirect or
-consequential damages or costs of any type arising out of any action taken by you or others related
-to the samples.
-
-## Branches
-
-The master branch targets
-features that are still in development and may not be stable. Please checkout the 
- branch that matches the targeted release.
+## Disclaimer
+Please ensure that you have the terminal ready by adding cluster to kube-config
+* aws eks --region region update-kubeconfig --name cluster_name
+* kubectx  
+* kubens nonprod
 
 
-For example, if you have the source checked out from git:
+Use release/6.5.1 to refresh the non prod cluster that we have. All you have to do is
 
 ```bash
-git checkout release/x.y.0 
+ git clone this repo
+ git checkout release/6.5.1
+ cd forgeops/bin 
+ ./deploy.sh -n nonprod ./../samples/config/prod/s-cluster
 ```
-
-
 ## Contents 
 
 * `docker/` -  contains the Dockerfiles for the various containers.
