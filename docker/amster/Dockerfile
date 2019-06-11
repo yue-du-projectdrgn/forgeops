@@ -19,6 +19,9 @@ COPY *.sh /opt/amster/
 # put these in the path as well - for convenience.
 COPY *.sh /usr/local/bin/
 
+# copy the config to import
+COPY config /opt/amster/
+
 # git is added to the container so we can optionally execute git commit, git push, etc.
 RUN chmod 775 /opt/amster/amster \
     && chown -R forgerock /opt

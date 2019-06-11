@@ -42,6 +42,9 @@ configure)
 export)
     ./export.sh
     ;;
+import)
+    ./import.sh
+    ;;
 *) 
    exec "$@"
 esac
